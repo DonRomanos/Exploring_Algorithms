@@ -8,6 +8,7 @@ class StringChallenge(ConanFile):
     generators = "cmake_find_package" # can be updated to cmake_find_package_multi if necessary
     exports = ["LICENSE.md"]
     exports_sources = ["src/*","CMakeLists.txt"]
+    default_options = {"gtest:build_gmock": False}
 
     def imports(self):
         self.copy("*.dll", "bin", "bin")
